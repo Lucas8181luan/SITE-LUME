@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lume Joias</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <img src="/static/logo.png" alt="Logo Lume" class="logo">
+        <h1>Lume Joias</h1>
+        <nav>
+            <a href="/">Catálogo</a>
+            <a href="/sobre">Sobre</a>
+            <a href="/contato">Contato</a>
+            <a href="/carrinho">Carrinho</a>
+        </nav>
+        <div class="banner efeito-banner">
+            <h2 class="banner-titulo">✨ Brilhe com Lume Joias ✨</h2>
+            <p class="banner-desc">Joias exclusivas, design moderno e qualidade premium.<br>Descubra as novidades e tendências!</p>
+        </div>
+    </header>
+    <main>
+        <form method="get" action="/" class="busca">
+            <input type="text" name="filtro" placeholder="Buscar joia..." value="{{ filtro }}">
+            <button type="submit">Buscar</button>
+        </form>
+        <section class="catalogo">
+            {% for joia in joias %}
+            <div class="joia">
+                <a href="/joia/{{ joia.id }}">
+                    <img src="{{ joia.imagem }}" alt="{{ joia.nome }}">
+                </a>
+                <h2>{{ joia.nome }}</h2>
+                <p>{{ joia.descricao }}</p>
+                <p class="preco">{{ joia.preco }}</p>
+                <a href="/carrinho" class="btn">Adicionar ao carrinho</a>
+                <div class="joia-detalhes">
+                    <span>Frete grátis acima de R$ 200</span><br>
+                    <span>Garantia de autenticidade</span>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Lume Joias</p>
+    </footer>
+</body>
+</html>
