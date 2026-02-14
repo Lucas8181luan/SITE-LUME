@@ -1,6 +1,52 @@
+def finalizar():
+    carrinho = session.get('carrinho', {})
+    itens = []
+    for id_str, qtd in carrinho.items():
+        joia = next((j for j in joias if str(j['id']) == id_str), None)
+        if joia:
+            itens.append(f"{joia['nome']} - {joia['preco']} - Quantidade: {qtd}")
+    mensagem = '\n'.join(itens)
+    mensagem = f"Olá! Gostaria de finalizar a compra com os seguintes itens:\n{mensagem}"
+    import urllib.parse
+    msg_encoded = urllib.parse.quote(mensagem)
+    whatsapp_url = f"https://wa.me/5561991580081?text={msg_encoded}"
+    return redirect(whatsapp_url)
 from flask import Flask, render_template, request
+from flask import session, redirect, url_for
 
 app = Flask(__name__)
+app.secret_key = 'lumejoias2026'  # chave para sessão
+
+# ...existing code...
+
+@app.route('/finalizar')
+def finalizar():
+    carrinho = session.get('carrinho', {})
+    itens = []
+    total = 0.0
+    for id_str, qtd in carrinho.items():
+        joia = next((j for j in joias if str(j['id']) == id_str), None)
+        if joia:
+            preco = float(joia['preco'].replace('R$', '').replace(',', '.'))
+            subtotal = preco * qtd
+            total += subtotal
+            itens.append(f"{joia['nome']}\n\tTamanho/Descrição: {joia['descricao']}\n\tPreço unitário: {joia['preco']}\n\tQuantidade: {qtd}\n\tSubtotal: R$ {subtotal:.2f}".replace('.', ','))
+    mensagem = "Olá! Gostaria de finalizar a compra com os seguintes itens:\n\n" + '\n\n'.join(itens)
+    mensagem += f"\n\nTotal: R$ {total:.2f}".replace('.', ',')
+    import urllib.parse
+    msg_encoded = urllib.parse.quote(mensagem)
+    whatsapp_url = f"https://wa.me/5561991580081?text={msg_encoded}"
+    return redirect(whatsapp_url)
+
+# Remover produto do carrinho
+@app.route('/remover_carrinho/<int:id>')
+def remover_carrinho(id):
+    carrinho = session.get('carrinho', {})
+    id_str = str(id)
+    if id_str in carrinho:
+        carrinho.pop(id_str)
+        session['carrinho'] = carrinho
+    return redirect(url_for('carrinho'))
 
 joias = [
     {
@@ -111,6 +157,14 @@ def index():
         filtradas = joias
     return render_template('index.html', joias=filtradas, filtro=filtro)
 
+# Adicionar produto ao carrinho
+@app.route('/add_carrinho/<int:id>')
+def add_carrinho(id):
+    carrinho = session.get('carrinho', {})
+    carrinho[str(id)] = carrinho.get(str(id), 0) + 1
+    session['carrinho'] = carrinho
+    return redirect(url_for('carrinho'))
+
 @app.route('/sobre')
 def sobre():
     return render_template('sobre.html')
@@ -126,7 +180,23 @@ def joia(id):
 
 @app.route('/carrinho')
 def carrinho():
-    return render_template('carrinho.html')
+    carrinho = session.get('carrinho', {})
+    itens = []
+    total = 0.0
+    for id_str, qtd in carrinho.items():
+        joia = next((j for j in joias if str(j['id']) == id_str), None)
+        if joia:
+            preco = float(joia['preco'].replace('R$', '').replace(',', '.'))
+            subtotal = preco * qtd
+            total += subtotal
+            itens.append({
+                'id': joia['id'],
+                'nome': joia['nome'],
+                'preco': joia['preco'],
+                'qtd': qtd,
+                'subtotal': f'R$ {subtotal:.2f}'.replace('.', ',')
+            })
+    return render_template('carrinho.html', itens=itens, total=f'R$ {total:.2f}'.replace('.', ','))
 
 @app.route('/home')
 def home():

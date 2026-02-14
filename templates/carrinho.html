@@ -26,30 +26,32 @@
                         <th>Preço</th>
                         <th>Quantidade</th>
                         <th>Total</th>
+                        <th>Remover</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for item in itens %}
                     <tr>
-                        <td>Anel Prata 925</td>
-                        <td>R$ 120,00</td>
-                        <td>1</td>
-                        <td>R$ 120,00</td>
+                        <td>{{ item.nome }}</td>
+                        <td>{{ item.preco }}</td>
+                        <td>{{ item.qtd }}</td>
+                        <td>{{ item.subtotal }}</td>
+                        <td>
+                            <a href="/remover_carrinho/{{ item.id }}" class="btn" style="background:#e74c3c; color:#fff; border-radius:50%; padding:6px 10px; font-size:18px; display:inline-block; border:none; box-shadow:0 2px 6px #aaa;">
+                                &#128465;
+                            </a>
+                        </td>
                     </tr>
-                    <tr>
-                        <td>Colar Coração</td>
-                        <td>R$ 180,00</td>
-                        <td>1</td>
-                        <td>R$ 180,00</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
             <div class="carrinho-resumo">
-                <p>Subtotal: <strong>R$ 300,00</strong></p>
+                <p>Subtotal: <strong>{{ total }}</strong></p>
                 <p>Frete: <strong>Grátis</strong></p>
-                <p>Total: <strong>R$ 300,00</strong></p>
-                <a href="/contato" class="btn">Finalizar compra</a>
+                <p>Total: <strong>{{ total }}</strong></p>
+                <a href="/finalizar" class="btn" target="_blank">Finalizar compra</a>
             </div>
-            <p class="carrinho-info">Funcionalidade simulada. Adicione joias ao carrinho e entre em contato para finalizar a compra!</p>
+            <p class="carrinho-info">Adicione joias ao carrinho e entre em contato para finalizar a compra!</p>
         </section>
     </main>
     <footer>
