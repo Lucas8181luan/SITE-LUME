@@ -5,45 +5,101 @@ app = Flask(__name__)
 joias = [
     {
         'id': 1,
-        'nome': 'Anel Solitário',
-        'imagem': '/static/anel_solitario.png',
-        'descricao': 'Anel solitário com pedra brilhante.',
-        'preco': 'R$ 150,00'
+        'nome': 'Anel Prisma',
+        'imagem': '/static/anel_prisma.png',
+        'descricao': 'Tamanho 22',
+        'preco': 'R$ 109,90'
     },
     {
         'id': 2,
-        'nome': 'Anel Prata 925',
-        'imagem': '/static/anel.png',
-        'descricao': 'Anel delicado em prata 925.',
-        'preco': 'R$ 120,00'
+        'nome': 'Anel Aurora Rosa',
+        'imagem': '/static/anel_aurora_rosa.png',
+        'descricao': 'Tamanho 17',
+        'preco': 'R$ 129,90'
     },
     {
         'id': 3,
-        'nome': 'Brinco Argola',
-        'imagem': '/static/brinco_angola.png',
-        'descricao': 'Brinco argola em prata com design moderno.',
-        'preco': 'R$ 110,00'
+        'nome': 'Anel Solitário Lumiere',
+        'imagem': '/static/anel_solitario_lumiere.png',
+        'descricao': 'Tamanho 23',
+        'preco': 'R$ 109,90'
     },
     {
         'id': 4,
-        'nome': 'Colar Coração',
-        'imagem': '/static/colar_coração.png',
-        'descricao': 'Colar com pingente de coração.',
-        'preco': 'R$ 180,00'
+        'nome': 'Anel Harmonia',
+        'imagem': '/static/anel_harmonia.png',
+        'descricao': 'Tamanho 18',
+        'preco': 'R$ 119,90'
     },
     {
         'id': 5,
-        'nome': 'Colar Estrela',
-        'imagem': '/static/colar_esterla.png',
-        'descricao': 'Colar com pingente de estrela em prata.',
-        'preco': 'R$ 170,00'
+        'nome': 'Anel Lume',
+        'imagem': '/static/anel_lume.png',
+        'descricao': 'Tamanho 21',
+        'preco': 'R$ 109,90'
     },
     {
         'id': 6,
-        'nome': 'Pulseira Elegante',
-        'imagem': '/static/pulseira_elegante.png',
-        'descricao': 'Pulseira fina e elegante.',
-        'preco': 'R$ 90,00'
+        'nome': 'Colar Gotas Lume',
+        'imagem': '/static/colar_gotas_lume.png',
+        'descricao': '',
+        'preco': 'R$ 139,90'
+    },
+    {
+        'id': 7,
+        'nome': 'Colar Pedras Rosas',
+        'imagem': '/static/colar_pedras_rosas.png',
+        'descricao': '',
+        'preco': 'R$ 139,90'
+    },
+    {
+        'id': 8,
+        'nome': 'Colar Árvore da Vida',
+        'imagem': '/static/colar_arvore_da_vida.png',
+        'descricao': '',
+        'preco': 'R$ 149,90'
+    },
+    {
+        'id': 9,
+        'nome': 'Colar Estrela Lume',
+        'imagem': '/static/colar_estrela_lume.png',
+        'descricao': '',
+        'preco': 'R$ 149,90'
+    },
+    {
+        'id': 10,
+        'nome': 'Conjunto Ponto de Luz',
+        'imagem': '/static/conjunto_ponto_de_luz.png',
+        'descricao': '',
+        'preco': 'R$ 179,90'
+    },
+    {
+        'id': 11,
+        'nome': 'Pulseira Corações e Luz',
+        'imagem': '/static/pulseira_coracoes_e_luz.png',
+        'descricao': '',
+        'preco': 'R$ 69,90'
+    },
+    {
+        'id': 12,
+        'nome': 'Pulseira Gotas de Luz Rosa',
+        'imagem': '/static/pulseira_gotas_de_luz_rosa.png',
+        'descricao': '',
+        'preco': 'R$ 79,90'
+    },
+    {
+        'id': 13,
+        'nome': 'Pulseira Trevo Preto',
+        'imagem': '/static/pulseira_trevo_preto.png',
+        'descricao': '',
+        'preco': 'R$ 159,90'
+    },
+    {
+        'id': 14,
+        'nome': 'Pulseira Trevo Branco',
+        'imagem': '/static/pulseira_trevo_branco.png',
+        'descricao': '',
+        'preco': 'R$ 159,90'
     }
 ]
 @app.route('/')
