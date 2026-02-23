@@ -146,6 +146,41 @@ joias = [
         'imagem': '/static/pulseira_trevo_branco.png',
         'descricao': '',
         'preco': 'R$ 159,90'
+    },
+    {
+        'id': 16,
+        'nome': 'Brinco Pérola',
+        'imagem': '/static/brinco_perola .png',
+        'descricao': 'Quantidade: 1',
+        'preco': 'R$ 29,90'
+    },
+    {
+        'id': 17,
+        'nome': 'Brinco Pérola',
+        'imagem': '/static/brinco_perola_1 .png',
+        'descricao': 'Quantidade: 1',
+        'preco': 'R$ 29,90'
+    },
+    {
+        'id': 18,
+        'nome': 'Colar Árvore da Vida',
+        'imagem': '/static/colar_arvore_da_vida.png.png',
+        'descricao': 'Quantidade: 1',
+        'preco': 'R$ 79,90'
+    },
+    {
+        'id': 19,
+        'nome': 'Colar Pedras Rosa',
+        'imagem': '/static/colar_pedra_rosa.png',
+        'descricao': 'Quantidade: 1',
+        'preco': 'R$ 79,90'
+    },
+    {
+        'id': 20,
+        'nome': 'Colar Estrela Lume',
+        'imagem': '/static/colar_estrela_lume.png.png',
+        'descricao': 'Quantidade: 1',
+        'preco': 'R$ 79,90'
     }
 ]
 @app.route('/')
