@@ -208,10 +208,6 @@ def sobre():
 def contato():
     return render_template('contato.html')
 
-@app.route('/joia/<int:id>')
-def joia(id):
-    j = next((j for j in joias if j['id'] == id), None)
-    return render_template('joia.html', joia=j)
 
 @app.route('/carrinho')
 def carrinho():

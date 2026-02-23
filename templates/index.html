@@ -29,9 +29,7 @@
         <section class="catalogo">
             {% for joia in joias %}
             <div class="joia">
-                <a href="/joia/{{ joia.id }}">
-                    <img src="{{ joia.imagem }}" alt="{{ joia.nome }}">
-                </a>
+                <img src="{{ joia.imagem }}" alt="{{ joia.nome }}">
                 <h2>{{ joia.nome }}</h2>
                 <p>{{ joia.descricao }}</p>
                 <p class="preco">{{ joia.preco }}</p>
