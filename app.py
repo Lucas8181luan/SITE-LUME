@@ -50,102 +50,123 @@ def remover_carrinho(id):
 
 joias = [
     {
+        'id': 22,
+        'nome': 'Bracelete',
+        'imagem': '/static/bracelete.png',
+        'descricao': '',
+        'preco': 'R$ 29,90'
+    },
+    {
+        'id': 21,
+        'nome': 'Brinco Trio Azul',
+        'imagem': '/static/trio_azul.png',
+        'descricao': '',
+        'preco': 'R$ 49,90'
+    },
+    {
+        'id': 19,
+        'nome': 'Brinco Trio Pontos de Luz Roxo',
+        'imagem': '/static/trio_de_brincos_ponto_de_luz_roxo.png',
+        'descricao': '',
+        'preco': 'R$ 49,90'
+    },
+    {
+        'id': 17,
+        'nome': 'Brincos Trio Argola de Coração',
+        'imagem': '/static/trio_de_argolas_com_formato_de_coração.png',
+        'descricao': '',
+        'preco': 'R$ 49,90'
+    },
+    {
         'id': 1,
         'nome': 'Anel Prisma',
         'imagem': '/static/anel_prisma.png',
         'descricao': 'Tamanho 22',
-        'preco': 'R$ 109,90'
+        'preco': 'R$ 49,90'
     },
     {
         'id': 2,
         'nome': 'Anel Aurora Rosa',
         'imagem': '/static/anel_aurora_rosa.png',
         'descricao': 'Tamanho 17',
-        'preco': 'R$ 129,90'
+        'preco': 'R$ 69,90'
     },
     {
         'id': 3,
         'nome': 'Anel Solitário Lumiere',
         'imagem': '/static/anel_solitario_lumiere.png',
         'descricao': 'Tamanho 23',
-        'preco': 'R$ 109,90'
+        'preco': 'R$ 69,90'
     },
     {
         'id': 4,
         'nome': 'Anel Harmonia',
         'imagem': '/static/anel_harmonia.png',
         'descricao': 'Tamanho 18',
-        'preco': 'R$ 119,90'
+        'preco': 'R$ 69,90'
     },
     {
         'id': 5,
         'nome': 'Anel Lume',
         'imagem': '/static/anel_lume.png',
         'descricao': 'Tamanho 21',
-        'preco': 'R$ 109,90'
+        'preco': 'R$ 59,90'
     },
     {
         'id': 6,
         'nome': 'Colar Gotas Lume',
         'imagem': '/static/colar_gotas_lume.png',
         'descricao': '',
-        'preco': 'R$ 139,90'
-    },
-    {
-        'id': 7,
-        'nome': 'Colar Pedras Rosas',
-        'imagem': '/static/colar_pedras_rosas.png',
-        'descricao': '',
-        'preco': 'R$ 139,90'
+        'preco': 'R$ 129,90'
     },
     {
         'id': 8,
         'nome': 'Colar Árvore da Vida',
         'imagem': '/static/colar_arvore_da_vida.png',
         'descricao': '',
-        'preco': 'R$ 149,90'
+        'preco': 'R$ 79,90'
     },
     {
         'id': 9,
         'nome': 'Colar Estrela Lume',
         'imagem': '/static/colar_estrela_lume.png',
         'descricao': '',
-        'preco': 'R$ 149,90'
+        'preco': 'R$ 79,90'
     },
     {
         'id': 10,
         'nome': 'Conjunto Ponto de Luz',
         'imagem': '/static/conjunto_ponto_de_luz.png',
         'descricao': '',
-        'preco': 'R$ 179,90'
-    },
-    {
-        'id': 11,
-        'nome': 'Pulseira Corações e Luz',
-        'imagem': '/static/pulseira_coracoes_e_luz.png',
-        'descricao': '',
-        'preco': 'R$ 69,90'
+        'preco': 'R$ 129,90'
     },
     {
         'id': 12,
         'nome': 'Pulseira Gotas de Luz Rosa',
         'imagem': '/static/pulseira_gotas_de_luz_rosa.png',
         'descricao': '',
-        'preco': 'R$ 79,90'
+        'preco': 'R$ 59,90'
     },
     {
         'id': 13,
         'nome': 'Pulseira Trevo Preto',
         'imagem': '/static/pulseira_trevo_preto.png',
         'descricao': '',
-        'preco': 'R$ 159,90'
+        'preco': 'R$ 109,90'
     },
     {
         'id': 14,
         'nome': 'Pulseira Trevo Branco',
         'imagem': '/static/pulseira_trevo_branco.png',
         'descricao': '',
-        'preco': 'R$ 159,90'
+        'preco': 'R$ 109,90'
+    },
+    {
+        'id': 15,
+        'nome': 'Anel Cruz Detalhada',
+        'imagem': '/static/anel_cruz_detalhada.png',
+        'descricao': '',
+        'preco': 'R$ 49,90'
     },
     {
         'id': 16,
@@ -164,23 +185,16 @@ joias = [
     {
         'id': 18,
         'nome': 'Colar Árvore da Vida',
-        'imagem': '/static/colar_arvore_da_vida.png.png',
-        'descricao': 'Quantidade: 1',
-        'preco': 'R$ 79,90'
-    },
-    {
-        'id': 19,
-        'nome': 'Colar Pedras Rosa',
-        'imagem': '/static/colar_pedra_rosa.png',
+        'imagem': '/static/colar_arvore_da_vida.2.png',
         'descricao': 'Quantidade: 1',
         'preco': 'R$ 79,90'
     },
     {
         'id': 20,
-        'nome': 'Colar Estrela Lume',
-        'imagem': '/static/colar_estrela_lume.png.png',
-        'descricao': 'Quantidade: 1',
-        'preco': 'R$ 79,90'
+        'nome': 'Brinco Estrela',
+        'imagem': '/static/brinco_estrela.png',
+        'descricao': '',
+        'preco': 'R$ 29,90'
     }
 ]
 @app.route('/')
